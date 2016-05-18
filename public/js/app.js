@@ -7,7 +7,14 @@ angular.module("codetutor").config(["$routeProvider", function($routeProvider){
     $routeProvider
       .when("/home", {
         templateUrl: "view/home.html"
+    }).when("/disciplinas", {
+        templateUrl:"view/disciplinas.html"
     }).when("/disciplina", {
-        templateUrl:"view/disciplina.html"
+        templateUrl:"view/disciplina.html",
+        controller:"disciplinaController"
+    }).when("/player", {
+        templateUrl:"view/player.html",
+        controller: "playerController"
     });
+
 }]);
