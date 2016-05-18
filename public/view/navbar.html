@@ -1,4 +1,4 @@
-<div>
+<div ng-controller="navbarController">
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -17,8 +17,8 @@
                     <button type="button" class="btn btn-success navbar-btn">Cadastrar/Login</button>
                 </div>
                 <div class="nav navbar-nav">
-                    <li><a>Home</a></li>
-                    <li><a>Disciplinas</a></li>
+                    <li><a href="" ng-click="navegarPara('home')">Home</a></li>
+                    <li><a href="" ng-click="navegarPara('disciplina')">Disciplinas</a></li>
                 </div>
             </div>
         </div>
