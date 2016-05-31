@@ -1,0 +1,15 @@
+
+{
+  "dev": {
+    "driver": "postgres",
+    "user": "postgres",
+    "database": "codetutor",
+    "password": "postgres",
+    "dialect": "postgres",
+    "host": "localhost",
+    "dialectOptions": {}
+  },
+    "production":{
+
+    }
+  }

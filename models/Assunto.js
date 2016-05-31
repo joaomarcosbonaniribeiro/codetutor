@@ -2,9 +2,9 @@
  * Created by João Marcos BR on 31/05/2016.
  */
 module.exports = function(sequelize, DataTypes){
-    var schemas = sequelize.define("Assunto", {
+    var schema = sequelize.define("Assunto", {
         id: {
-            type: DataTypes.LONG,
+            type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true
         },
@@ -16,11 +16,12 @@ module.exports = function(sequelize, DataTypes){
     },{
         classMethods: {
             associar: function(models){
-                schemas.hasMany(models.Video);
+                schema.hasMany(models.Video);
             }
         },
         instanceMethods: {
 
         }
-    })
-}
+    });
+    return schema;
+};

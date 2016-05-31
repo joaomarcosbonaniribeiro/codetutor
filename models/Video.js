@@ -2,9 +2,9 @@
  * Created by João Marcos BR on 31/05/2016.
  */
 module.exports = function(sequelize, DataTypes){
-    var schemas = sequelize.define("Video", {
+    var schema = sequelize.define("Video", {
         id: {
-            type: DataTypes.LONG,
+            type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true
         },
@@ -35,5 +35,6 @@ module.exports = function(sequelize, DataTypes){
 
             }
         }
-    })
-}
+    });
+    return schema;
+};

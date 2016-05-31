@@ -4,7 +4,7 @@
 module.exports = function (sequelize, DataTypes) {
     var schema = sequelize.define('Usuario', {
             id: {
-                type: DataTypes.LONG,
+                type: DataTypes.INTEGER,
                 primaryKey: true,
                 autoIncrement: true
             },

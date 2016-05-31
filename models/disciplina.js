@@ -2,25 +2,26 @@
  * Created by João Marcos BR on 31/05/2016.
  */
 module.exports = function(sequelize, DataTypes){
-    var schemas = sequelize.define("Disciplina", {
+    var schema = sequelize.define("Disciplina", {
         id: {
-            type: DataTypes.LONG,
+            type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true
         },
         name: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: false
         }
 
     },{
         classMethods: {
             associar: function(models){
-                schemas.hasMany(models.Assunto);
+                schema.hasMany(models.Assunto);
             }
         },
         instanceMethods: {
 
         }
-    })
-}
+    });
+    return schema;
+};

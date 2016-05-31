@@ -9,6 +9,7 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 var disciplina = require('./routes/disciplina');
 var app = express();
+var models = require('./models');
 
 // uncomment after placing your favicon in /public
 app.use(favicon(path.join(__dirname, 'public/image', 'tutor-icon.png')));
