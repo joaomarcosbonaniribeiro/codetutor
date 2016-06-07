@@ -1,0 +1,38 @@
+[
+  {
+    "model": "Usuario",
+    "keys": [
+      "email"
+    ],
+    "data": {
+      "nome": "Administrador",
+      "email": "admin@admin.com",
+      "senha": "d033e22ae348aeb5660fc2140aec35850c4da997",
+      "papel": "ADMINISTRADOR"
+    }
+  },
+  {
+    "model": "Usuario",
+    "keys": [
+      "email"
+    ],
+    "data": {
+      "nome": "Professor",
+      "email": "prof@prof.com",
+      "senha": "d033e22ae348aeb5660fc2140aec35850c4da997",
+      "papel": "PROFESSOR"
+    }
+  },
+  {
+    "model": "Usuario",
+    "keys": [
+      "email"
+    ],
+    "data": {
+      "nome": "Aluno",
+      "email": "aluno@aluno.com",
+      "senha": "34c6fceca75e456f25e7e99531e2425c6c1de443",
+      "papel": "ALUNO"
+    }
+  }
+]

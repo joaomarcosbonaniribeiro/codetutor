@@ -8,7 +8,11 @@ module.exports = function(sequelize, DataTypes){
             primaryKey: true,
             autoIncrement: true
         },
-        nome:{
+        titulo:{
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+        nomeArquivo:{
             type: DataTypes.STRING,
             allowNull: false,
         },
@@ -17,13 +21,25 @@ module.exports = function(sequelize, DataTypes){
             unique: true,
             allowNull: false
         },
+        caminhoThumbnail:{
+            type:DataTypes.STRING,
+            unique: true,
+            allowNull: false
+        },
         dataPostagem:{
             type: DataTypes.DATE,
+            allowNull: false
+        },
+        tipo:{
+            type:DataTypes.STRING,
             allowNull: false
         }
     }, {
         classMethods: {
             buscarPorId: function(id, onSuccess, onError){
+
+            },
+            buscarPorIdUsuario: function(idUsuario, onSuccess, onError){
 
             },
             associar: function (models) {
@@ -32,7 +48,7 @@ module.exports = function(sequelize, DataTypes){
         },
         instanceMethods: {
             salvar : function(onSuccess, onError){
-
+                this.save().then(onSuccess).catch(onError);
             }
         }
     });

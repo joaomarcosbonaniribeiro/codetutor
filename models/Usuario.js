@@ -1,6 +1,7 @@
 /**
  * Created by João Marcos BR on 31/05/2016.
  */
+var crypto = require("crypto");
 module.exports = function (sequelize, DataTypes) {
     var schema = sequelize.define('Usuario', {
             id: {
@@ -39,11 +40,23 @@ module.exports = function (sequelize, DataTypes) {
                 },
                 associar: function (models) {
                     schema.hasMany(models.Video);
+                },
+                buscarPorEmailESenha: function (email, senha, onSuccess, onError) {
+                    var shasum = crypto.createHash("sha1");
+                    shasum.update(senha);
+                    senha = shasum.digest("hex");
+                    schema.findOne({where: {email: email, senha: senha}}, {raw: true})
+                        .then(onSuccess)
+                        .catch(onError);
                 }
             },
             instanceMethods: {
                 salvar: function (onSuccess, onError) {
-
+                    var senha = this.senha;
+                    var shasum = crypto.createHash("sha1");
+                    shasum.update(senha);
+                    this.senha = shasum.digest("hex");
+                    this.save().then(onSuccess).catch(onError);
                 }
             }
         });

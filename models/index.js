@@ -7,6 +7,7 @@ var env = process.env.NODE_ENV || "dev";
 var dir = path.resolve(__dirname, "..");
 var Sequelize = require('sequelize');
 var config = require(path.resolve(dir, 'database.json'))[env];
+var sequelize_fixtures = require('sequelize-fixtures');
 
 var sequelize = new Sequelize(config.database, config.user, config.password, {
     host: config.host,
@@ -37,7 +38,12 @@ for(var r in models){
     models[r].associar(models);
 }
 
-sequelize.sync();
+sequelize.sync().then(function (){
+    // Cria os registros iniciais do banco de dados
+    sequelize_fixtures.loadFile('../initialdata.json', models).then(function () {
+        console.log("Registros iniciais inseridos");
+    })
+});
 
 module.exports.Sequelize = Sequelize;
 module.exports.sequelize = sequelize;
