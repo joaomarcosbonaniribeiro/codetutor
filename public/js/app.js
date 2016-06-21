@@ -16,12 +16,12 @@ angular.module("codetutor").config(["$routeProvider", "$httpProvider", "jwtInter
                 resolve: {
                     factory: checkRouting
                 }
-            })
-            .when("/login", {
+            }).when("/login", {
                 templateUrl: "view/login.html",
                 controller: "loginController"
             }).when("/home", {
                 templateUrl: "view/home.html",
+                controller : "homeController",
                 resolve: {
                     factory: checkRouting
                 }
