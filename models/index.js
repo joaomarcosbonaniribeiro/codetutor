@@ -6,7 +6,7 @@ var path = require("path");
 var env = process.env.NODE_ENV || "dev";
 var dir = path.resolve(__dirname, "..");
 var Sequelize = require('sequelize');
-var config = require(path.resolve(dir, 'database.json'))[env];
+var config = require(path.resolve(dir, 'database.json'))["dev"];
 var sequelize_fixtures = require('sequelize-fixtures');
 
 var sequelize = new Sequelize(config.database, config.user, config.password, {
