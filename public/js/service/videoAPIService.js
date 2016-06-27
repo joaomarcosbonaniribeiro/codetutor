@@ -11,7 +11,16 @@ angular.module("codetutor").factory("videoAPIService", function ($http, $locatio
         });
     };
 
+    var _buscarVideosRecentes = function(){
+        return $http({
+            url :"http://localhost:3000/sec/video/",
+            method: "GET",
+            skipAuthorization: false
+        });
+    };
+
     return {
-        postVideo: _postVideo
+        postVideo: _postVideo,
+        buscarVideosRecentes: _buscarVideosRecentes
     };
 });

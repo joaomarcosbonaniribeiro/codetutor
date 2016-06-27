@@ -44,6 +44,19 @@ module.exports = function(sequelize, DataTypes){
             },
             associar: function (models) {
 
+            },
+            buscarVideosRecentes: function (onSuccess, onError) {
+               //sequelize.query(
+               //    'SELECT * FROM "Videos" ORDER BY "createdAt" DESC LIMIT 5'
+               //    , {type: sequelize.QueryTypes.SELECT})
+               //    .then(onSuccess)
+               //    .catch(onError);
+
+               schema.findAll({
+                   limit:5,
+                   order:'"createdAt" DESC'
+               }).then(onSuccess)
+                 .catch(onError);
             }
         },
         instanceMethods: {
