@@ -3,8 +3,9 @@
  */
 var express = require("express");
 var router = express.Router();
+var model = require("../models");
+var Disciplina = model.Disciplina;
 
-var disciplinas = [];
 /**
  * método que cadastra disciplina
  */
@@ -19,7 +20,11 @@ router.post("/", function(req, res){
 });
 
 router.get("/", function(req, res){
-    return res.status(200).json(disciplinas);
+    Disciplina.buscarDisciplinas(function(data){
+        return res.status(200).json(data);
+    }, function(err){
+        return res.status(500).json(err);
+    });
 });
 
 module.exports = router;

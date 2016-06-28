@@ -27,6 +27,8 @@ angular.module("codetutor").config(["$routeProvider", "$httpProvider", "jwtInter
                 }
             }).when("/disciplinas", {
                 templateUrl: "view/disciplinas.html",
+                controller: "disciplinasController",
+
                 resolve: {
                     factory: checkRouting
                 }

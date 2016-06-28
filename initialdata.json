@@ -34,5 +34,25 @@
       "senha": "34c6fceca75e456f25e7e99531e2425c6c1de443",
       "papel": "ALUNO"
     }
+  },
+  {
+    "model": "Disciplina",
+    "keys": [
+      "name"
+    ],
+    "data": {
+      "name": "Banco de Dados",
+      "decricao": "Disciplina que aborda a teoria de banco de dados relacionais e não relacionais"
+    }
+  },
+  {
+    "model": "Disciplina",
+    "keys": [
+      "name"
+    ],
+    "data": {
+      "name": "Algoritmos",
+      "decricao": "Disciplina que aborda as estruturas básicas de algoritmos"
+    }
   }
 ]
