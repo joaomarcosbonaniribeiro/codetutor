@@ -53,10 +53,13 @@ module.exports = function(sequelize, DataTypes){
                //    .catch(onError);
 
                schema.findAll({
-                   limit:5,
+                   limit:20,
                    order:'"createdAt" DESC'
                }).then(onSuccess)
                  .catch(onError);
+            },
+            buscarVideosPoIdAssunto:function(){
+
             }
         },
         instanceMethods: {
