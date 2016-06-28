@@ -7,8 +7,8 @@
         <h1> Ultimos Vídeos</h1>
     </div>
 
-    <div ng-repeat="video in videos">
-        <img ng-src="{{video.caminhoThumbnail}}" ng-click="assistirVideo(video)"/>
-        Titulo: {{video.titulo}}
+    <div class="figura col-md-3" ng-repeat="video in videos">
+        <img ng-src="{{video.caminhoThumbnail}}" class="img-responsive img-thumbnail" ng-click="assistirVideo(video)" />
+         <p class="figura">{{video.titulo}}</p>
     </div>
 </div>

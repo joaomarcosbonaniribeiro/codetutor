@@ -21,6 +21,13 @@ module.exports = function(sequelize, DataTypes){
         classMethods: {
             associar: function(models){
                 schema.hasMany(models.Assunto);
+            },
+            buscarDisciplinas: function (onSuccess, onError) {
+
+                schema.findAll({
+                    order:'"createdAt" DESC'
+                }).then(onSuccess)
+                    .catch(onError);
             }
         },
         instanceMethods: {
