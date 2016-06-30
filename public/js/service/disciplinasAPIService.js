@@ -3,10 +3,10 @@
  */
 
 angular.module("codetutor").factory("disciplinasAPIService", function ($http, $location, Upload) {
-    var _postDisciplinas = function (disciplinas, dados) {
-        return Upload.upload({
-            url: 'http://localhost:3000/sec/disciplinas/',
-            data: {disciplinas:disciplinas, dados: dados},
+    var _postDisciplinas = function (dados) {
+        return $http({
+            url: 'http://localhost:3000/sec/disciplina/',
+            data: dados,
             skipAuthorization: false,
             method: "POST"
         });
@@ -14,7 +14,7 @@ angular.module("codetutor").factory("disciplinasAPIService", function ($http, $l
 
     var _buscarDisciplinas = function(){
         return $http({
-            url :"http://localhost:3000/sec/disciplinas/",
+            url :"http://localhost:3000/sec/disciplina/",
             method: "GET",
             skipAuthorization: false
         });
@@ -22,6 +22,6 @@ angular.module("codetutor").factory("disciplinasAPIService", function ($http, $l
 
     return {
         postVideo: _postDisciplinas,
-        buscarDisciplinas: _buscarDisciplinas()
+        buscarDisciplinas: _buscarDisciplinas
     };
 });
