@@ -11,6 +11,12 @@ angular.module("codetutor").controller("disciplinasController", function ($scope
        });
     };
 
+    $scope.acessarDisciplina = function(disciplina){
+        $scope.disciplina = disciplina.name;
+        $scope.assunto = disciplina.assunto;
+        $location.path("/disciplina/"+disciplina.id);
+    };
+
 
 
     carregarDisciplinas();

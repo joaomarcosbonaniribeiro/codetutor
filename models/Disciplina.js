@@ -29,6 +29,7 @@ module.exports = function(sequelize, DataTypes){
                 }).then(onSuccess)
                     .catch(onError);
             }
+
         },
         instanceMethods: {
 

@@ -17,6 +17,13 @@ module.exports = function(sequelize, DataTypes){
         classMethods: {
             associar: function(models){
                 schema.hasMany(models.Video);
+            },
+            buscarAssuntosPorId: function (criterioDeBusca, onSuccess, onError) {
+                schema.where(id == criterioDeBusca),
+                    schema.findAll({
+                        order:'"createdAt" DESC'
+                    }).then(onSuccess)
+                        .catch(onError);
             }
         },
         instanceMethods: {

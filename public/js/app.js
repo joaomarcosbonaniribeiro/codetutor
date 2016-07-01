@@ -32,7 +32,7 @@ angular.module("codetutor").config(["$routeProvider", "$httpProvider", "jwtInter
                 resolve: {
                     factory: checkRouting
                 }
-            }).when("/disciplina", {
+            }).when("/disciplina/:idDisciplina", {
                 templateUrl: "view/disciplina.html",
                 controller: "disciplinaController",
                 resolve: {
