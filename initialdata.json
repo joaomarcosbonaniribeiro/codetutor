@@ -54,5 +54,71 @@
       "name": "Algoritmos",
       "decricao": "Disciplina que aborda as estruturas básicas de algoritmos"
     }
+  },
+  {
+    "model": "Assunto",
+    "keys": [
+      "descricao",
+      "DisciplinaId"
+    ],
+    "data": {
+      "DisciplinaId": 1,
+      "descricao": "Introdução"
+    }
+  },
+  {
+    "model": "Assunto",
+    "keys": [
+      "descricao",
+      "DisciplinaId"
+    ],
+    "data": {
+      "DisciplinaId": 1,
+      "descricao": "Modelo E/R (Entidade-Relacionamento)"
+    }
+  },
+  {
+    "model": "Assunto",
+    "keys": [
+      "descricao",
+      "DisciplinaId"
+    ],
+    "data": {
+      "DisciplinaId": 2,
+      "descricao": "Introdução"
+    }
+  },
+  {
+    "model": "Assunto",
+    "keys": [
+      "descricao",
+      "DisciplinaId"
+    ],
+    "data": {
+      "DisciplinaId": 2,
+      "descricao": "Variáveis"
+    }
+  },
+  {
+    "model": "Assunto",
+    "keys": [
+      "descricao",
+      "DisciplinaId"
+    ],
+    "data": {
+      "DisciplinaId": 2,
+      "descricao": "Estruturas Condicionais"
+    }
+  },
+  {
+    "model": "Assunto",
+    "keys": [
+      "descricao",
+      "DisciplinaId"
+    ],
+    "data": {
+      "DisciplinaId": 2,
+      "descricao": "Estruturas de Repetição"
+    }
   }
 ]

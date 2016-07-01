@@ -2,9 +2,9 @@
  * Created by João Marcos BR on 28/06/2016.
  */
 
-angular.module("codetutor").controller("disciplinasController", function ($scope, $location, disciplinasAPIService) {
+angular.module("codetutor").controller("disciplinasController", function ($scope, $location, disciplinaAPIService) {
     var carregarDisciplinas = function(){
-       disciplinasAPIService.buscarDisciplinas().success(function(data){
+       disciplinaAPIService.buscarDisciplinas().success(function(data){
             $scope.disciplinas = data;
        }).error(function(err){
 
@@ -16,8 +16,6 @@ angular.module("codetutor").controller("disciplinasController", function ($scope
         $scope.assunto = disciplina.assunto;
         $location.path("/disciplina/"+disciplina.id);
     };
-
-
 
     carregarDisciplinas();
 });

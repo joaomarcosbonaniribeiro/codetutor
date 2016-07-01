@@ -11,6 +11,7 @@ var validateRequest = require('./middlewares/validateRequest');
 var routes = require('./routes/index');
 var usuario = require('./routes/usuario');
 var disciplina = require('./routes/disciplina');
+var assunto = require('./routes/assunto');
 var video = require('./routes/video');
 
 // uncomment after placing your favicon in /public
@@ -25,6 +26,7 @@ app.use('/', routes);
 app.use('/usuario', usuario);
 app.use('/sec', validateRequest);
 app.use('/sec/disciplina', disciplina);
+app.use('/sec/assunto', assunto);
 app.use('/sec/video', video);
 
 // catch 404 and forward to error handler

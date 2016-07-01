@@ -23,11 +23,13 @@ module.exports = function(sequelize, DataTypes){
                 schema.hasMany(models.Assunto);
             },
             buscarDisciplinas: function (onSuccess, onError) {
-
                 schema.findAll({
                     order:'"createdAt" DESC'
                 }).then(onSuccess)
                     .catch(onError);
+            },
+            buscarPorId: function (id,onSuccess, onError) {
+                schema.findById(id).then(onSuccess).catch(onError);
             }
 
         },

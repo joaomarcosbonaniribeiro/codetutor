@@ -24,6 +24,12 @@ module.exports = function(sequelize, DataTypes){
                         order:'"createdAt" DESC'
                     }).then(onSuccess)
                         .catch(onError);
+            },
+            buscarAssuntosPorIdDisciplina:function(disciplinaId, onSuccess, onError){
+                schema.findAll({
+                    where: {DisciplinaId:disciplinaId}
+                }).then(onSuccess)
+                    .catch(onError);
             }
         },
         instanceMethods: {
