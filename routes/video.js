@@ -51,5 +51,12 @@ router.get("/", function (req, res) {
         return res.status(500).json(err);
     });
 });
+router.get("/", function (req, res) {
+    Video.buscarVideo(function(data){
+        return res.status(200).json(data);
+    }, function(err){
+        return res.status(500).json(err);
+    });
+});
 
 module.exports = router;

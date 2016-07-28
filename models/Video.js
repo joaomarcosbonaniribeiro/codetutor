@@ -46,20 +46,31 @@ module.exports = function(sequelize, DataTypes){
 
             },
             buscarVideosRecentes: function (onSuccess, onError) {
-               //sequelize.query(
-               //    'SELECT * FROM "Videos" ORDER BY "createdAt" DESC LIMIT 5'
-               //    , {type: sequelize.QueryTypes.SELECT})
-               //    .then(onSuccess)
-               //    .catch(onError);
+                //sequelize.query(
+                //    'SELECT * FROM "Videos" ORDER BY "createdAt" DESC LIMIT 5'
+                //    , {type: sequelize.QueryTypes.SELECT})
+                //    .then(onSuccess)
+                //    .catch(onError);
 
-               schema.findAll({
-                   limit:20,
-                   order:'"createdAt" DESC'
-               }).then(onSuccess)
-                 .catch(onError);
+                schema.findAll({
+                    limit:20,
+                    order:'"createdAt" DESC'
+                }).then(onSuccess)
+                    .catch(onError);
             },
-            buscarVideosPoIdAssunto:function(){
 
+            buscarVideo: function (onSuccess, onError) {
+                //sequelize.query(
+                //    'SELECT * FROM "Videos" ORDER BY "createdAt" DESC LIMIT 5'
+                //    , {type: sequelize.QueryTypes.SELECT})
+                //    .then(onSuccess)
+                //    .catch(onError);
+
+                schema.findAll({
+                    limit:1,
+                    order:'"createdAt" DESC'
+                }).then(onSuccess)
+                    .catch(onError);
             }
         },
         instanceMethods: {

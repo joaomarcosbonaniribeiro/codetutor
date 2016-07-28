@@ -11,7 +11,11 @@ angular.module("codetutor").controller("homeController", function ($scope, $loca
     };
 
     $scope.assistirVideo = function(video){
-        $location.path("/player");
+        videoAPIService.buscarVideo().success(function(data){
+            $scope.videoSelecionado = data;
+        }).error(function(err){
+            alert(err.msg);
+        });
     };
 
     carregarVideosRecentes();
